@@ -39,8 +39,7 @@ router.get('/', async (req, res) => {
 router.put('/:ppdbId',verifyAdmin, async (req, res) => {
     try{
         const ppdbUpdate = await Ppdb.updateOne({_id: req.params.ppdbId}, {
-            nama: req.body.nama,
-            alamat: req.body.alamat
+            status: req.body.status
         })
         res.json(ppdbUpdate)
     }catch(err){
